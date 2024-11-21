@@ -1,0 +1,983 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 2: Variables and Data Types &#8212; Python Exercise Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 3: Control Flow - Your Programming Navigation System" href="chapter3.html" />
+    <link rel="prev" title="Chapter 1: First Steps into Programming with Python" href="chapter1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Python Exercise Book - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python Exercise Book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to “Learn Python Programming”
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Guide for Python Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: First Steps into Programming with Python</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 2: Variables and Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Control Flow - Your Programming Navigation System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Functions - The Building Blocks of Modular Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Data Structures - A Comprehensive Exploration of Information Organization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: File Operations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/chapter2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 2: Variables and Data Types</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-programs-remember-things">Making Your Programs Remember Things</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-what-are-variables">Introduction: What Are Variables?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-box-analogy">The Box Analogy</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-variables">Creating Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-rules-for-variable-names">Basic Rules for Variable Names</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-in-python">Data Types in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">1. Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-whole-numbers">Integers (Whole Numbers)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers-decimals">Floating-Point Numbers (Decimals)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#number-systems">Number Systems</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-text">2. Strings (Text)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-strings">Creating Strings</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String Methods</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">String Formatting</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-true-false">3. Booleans (True/False)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#none-nothing">4. None (Nothing)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-types">Converting Between Types</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-examples">Practical Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-calculator">1. Simple Calculator</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#personal-information-manager">2. Personal Information Manager</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shopping-cart-calculator">3. Shopping Cart Calculator</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes-and-how-to-fix-them">Common Mistakes and How to Fix Them</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#type-mismatch">1. Type Mismatch</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-name-errors">2. Variable Name Errors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-sensitivity">3. Case Sensitivity</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises">Practice Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-exercises">Basic Exercises</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-exercises">Intermediate Exercises</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-exercises">Advanced Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-ahead">Looking Ahead</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-variables-and-data-types">
+<h1>Chapter 2: Variables and Data Types<a class="headerlink" href="#chapter-2-variables-and-data-types" title="Link to this heading">#</a></h1>
+<section id="making-your-programs-remember-things">
+<h2>Making Your Programs Remember Things<a class="headerlink" href="#making-your-programs-remember-things" title="Link to this heading">#</a></h2>
+<section id="introduction-what-are-variables">
+<h3>Introduction: What Are Variables?<a class="headerlink" href="#introduction-what-are-variables" title="Link to this heading">#</a></h3>
+<section id="the-box-analogy">
+<h4>The Box Analogy<a class="headerlink" href="#the-box-analogy" title="Link to this heading">#</a></h4>
+<p>Imagine you have a bunch of labeled boxes. In one box labeled “age,” you put the number 25. In another box labeled “name,” you put the text “Alice.” Variables in Python work exactly like this! They’re containers that:</p>
+<ul class="simple">
+<li><p>Have names (like “age” or “name”)</p></li>
+<li><p>Store values (like numbers or text)</p></li>
+<li><p>Can be changed whenever you want</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>        <span class="c1"># Creating a box labeled &quot;age&quot; and putting 25 in it</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>  <span class="c1"># Creating a box labeled &quot;name&quot; and putting &quot;Alice&quot; in it</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="creating-variables">
+<h3>Creating Variables<a class="headerlink" href="#creating-variables" title="Link to this heading">#</a></h3>
+<section id="basic-rules-for-variable-names">
+<h4>Basic Rules for Variable Names<a class="headerlink" href="#basic-rules-for-variable-names" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Must start with a letter or underscore:</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good variable names</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">_secret</span> <span class="o">=</span> <span class="s2">&quot;hidden&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># Bad variable names (these will cause errors)</span>
+<span class="mi">2</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>    <span class="c1"># Can&#39;t start with a number</span>
+<span class="n">my</span><span class="o">-</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>  <span class="c1"># Can&#39;t use hyphens</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Can contain letters, numbers, and underscores:</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_age</span> <span class="o">=</span> <span class="mi">25</span>        <span class="c1"># Using underscore (snake_case)</span>
+<span class="n">myAge</span> <span class="o">=</span> <span class="mi">25</span>          <span class="c1"># Using camel case</span>
+<span class="n">PlayerScore</span> <span class="o">=</span> <span class="mi">100</span>   <span class="c1"># Using pascal case</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Case sensitive (age and Age are different):</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">Age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">AGE</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="c1"># These are three different variables!</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Can’t use Python’s special keywords:</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># These won&#39;t work</span>
+<span class="k">class</span> <span class="err">= &quot;</span><span class="nc">Biology</span><span class="s2">&quot;    # &#39;class&#39; is a Python keyword</span>
+<span class="k">if</span> <span class="o">=</span> <span class="mi">5</span>              <span class="c1"># &#39;if&#39; is a Python keyword</span>
+
+<span class="c1"># Use these instead</span>
+<span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;Biology&quot;</span>
+<span class="n">if_value</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="data-types-in-python">
+<h3>Data Types in Python<a class="headerlink" href="#data-types-in-python" title="Link to this heading">#</a></h3>
+<section id="numbers">
+<h4>1. Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h4>
+<section id="integers-whole-numbers">
+<h5>Integers (Whole Numbers)<a class="headerlink" href="#integers-whole-numbers" title="Link to this heading">#</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="n">students</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Operations with integers</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>         <span class="c1"># Addition</span>
+<span class="n">difference</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">7</span>  <span class="c1"># Subtraction</span>
+<span class="n">product</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span>     <span class="c1"># Multiplication</span>
+<span class="n">quotient</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Integer division (removes decimal)</span>
+</pre></div>
+</div>
+</section>
+<section id="floating-point-numbers-decimals">
+<h5>Floating-Point Numbers (Decimals)<a class="headerlink" href="#floating-point-numbers-decimals" title="Link to this heading">#</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="mf">19.99</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">1.75</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
+
+<span class="c1"># Operations with floats</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mf">19.99</span> <span class="o">+</span> <span class="mf">0.99</span>    <span class="c1"># Addition</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mf">75.5</span> <span class="o">-</span> <span class="mf">2.5</span>     <span class="c1"># Subtraction</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Multiplication and powers</span>
+</pre></div>
+</div>
+</section>
+<section id="number-systems">
+<h5>Number Systems<a class="headerlink" href="#number-systems" title="Link to this heading">#</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Binary (base 2)</span>
+<span class="n">binary</span> <span class="o">=</span> <span class="mb">0b1010</span>    <span class="c1"># Equal to 10 in decimal</span>
+
+<span class="c1"># Octal (base 8)</span>
+<span class="n">octal</span> <span class="o">=</span> <span class="mo">0o17</span>       <span class="c1"># Equal to 15 in decimal</span>
+
+<span class="c1"># Hexadecimal (base 16)</span>
+<span class="n">hexa</span> <span class="o">=</span> <span class="mh">0xFF</span>        <span class="c1"># Equal to 255 in decimal</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="strings-text">
+<h4>2. Strings (Text)<a class="headerlink" href="#strings-text" title="Link to this heading">#</a></h4>
+<section id="creating-strings">
+<h5>Creating Strings<a class="headerlink" href="#creating-strings" title="Link to this heading">#</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Different ways to create strings</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Hello, World!&#39;</span>
+<span class="n">long_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;This is a</span>
+<span class="s2">multi-line</span>
+<span class="s2">string&quot;&quot;&quot;</span>
+
+<span class="c1"># String operations</span>
+<span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;World&quot;</span>    <span class="c1"># Concatenation</span>
+<span class="n">repeated</span> <span class="o">=</span> <span class="s2">&quot;Ha&quot;</span> <span class="o">*</span> <span class="mi">3</span>                   <span class="c1"># Repetition (HaHaHa)</span>
+</pre></div>
+</div>
+</section>
+<section id="string-methods">
+<h5>String Methods<a class="headerlink" href="#string-methods" title="Link to this heading">#</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+
+<span class="c1"># Common string operations</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>         <span class="c1"># HELLO, WORLD!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>         <span class="c1"># hello, world!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="p">))</span>  <span class="c1"># Jello, World!</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>           <span class="c1"># 13 (length of string)</span>
+</pre></div>
+</div>
+</section>
+<section id="string-formatting">
+<h5>String Formatting<a class="headerlink" href="#string-formatting" title="Link to this heading">#</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="c1"># Different ways to format strings</span>
+<span class="c1"># Method 1: f-strings (recommended)</span>
+<span class="n">message1</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old&quot;</span>
+
+<span class="c1"># Method 2: .format()</span>
+<span class="n">message2</span> <span class="o">=</span> <span class="s2">&quot;My name is </span><span class="si">{}</span><span class="s2"> and I am </span><span class="si">{}</span><span class="s2"> years old&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+
+<span class="c1"># Method 3: % operator (older style)</span>
+<span class="n">message3</span> <span class="o">=</span> <span class="s2">&quot;My name is </span><span class="si">%s</span><span class="s2"> and I am </span><span class="si">%d</span><span class="s2"> years old&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="booleans-true-false">
+<h4>3. Booleans (True/False)<a class="headerlink" href="#booleans-true-false" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_student</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">is_working</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Boolean operations</span>
+<span class="n">has_access</span> <span class="o">=</span> <span class="n">is_student</span> <span class="ow">or</span> <span class="n">is_working</span>   <span class="c1"># True</span>
+<span class="n">can_vote</span> <span class="o">=</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span>                    <span class="c1"># True if age is 18 or more</span>
+</pre></div>
+</div>
+</section>
+<section id="none-nothing">
+<h4>4. None (Nothing)<a class="headerlink" href="#none-nothing" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># None represents the absence of a value</span>
+<span class="n">empty_variable</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="type-conversion">
+<h3>Type Conversion<a class="headerlink" href="#type-conversion" title="Link to this heading">#</a></h3>
+<section id="converting-between-types">
+<h4>Converting Between Types<a class="headerlink" href="#converting-between-types" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># String to Number</span>
+<span class="n">age_str</span> <span class="o">=</span> <span class="s2">&quot;25&quot;</span>
+<span class="n">age_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age_str</span><span class="p">)</span>      <span class="c1"># Convert to integer</span>
+<span class="n">price_str</span> <span class="o">=</span> <span class="s2">&quot;19.99&quot;</span>
+<span class="n">price_num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">price_str</span><span class="p">)</span>  <span class="c1"># Convert to float</span>
+
+<span class="c1"># Number to String</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">count_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>      <span class="c1"># Convert to string</span>
+
+<span class="c1"># Example: User Input Processing</span>
+<span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">)</span>  <span class="c1"># Always returns a string</span>
+<span class="n">user_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>              <span class="c1"># Convert to number for calculations</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="practical-examples">
+<h3>Practical Examples<a class="headerlink" href="#practical-examples" title="Link to this heading">#</a></h3>
+<section id="simple-calculator">
+<h4>1. Simple Calculator<a class="headerlink" href="#simple-calculator" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting user input</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter first number: &quot;</span><span class="p">))</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter second number: &quot;</span><span class="p">))</span>
+
+<span class="c1"># Performing calculations</span>
+<span class="n">sum_result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+<span class="n">diff_result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+<span class="n">prod_result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+<span class="n">div_result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+
+<span class="c1"># Displaying results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sum: </span><span class="si">{</span><span class="n">sum_result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Difference: </span><span class="si">{</span><span class="n">diff_result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Product: </span><span class="si">{</span><span class="n">prod_result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Division: </span><span class="si">{</span><span class="n">div_result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="personal-information-manager">
+<h4>2. Personal Information Manager<a class="headerlink" href="#personal-information-manager" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collecting information</span>
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">))</span>
+<span class="n">height</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your height in meters: &quot;</span><span class="p">))</span>
+<span class="n">is_student</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Are you a student? (yes/no): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span>
+
+<span class="c1"># Creating a summary</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Personal Information ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Age: </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Height: </span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s2">m&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Student Status: </span><span class="si">{</span><span class="s1">&#39;Student&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_student</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Not a Student&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="shopping-cart-calculator">
+<h4>3. Shopping Cart Calculator<a class="headerlink" href="#shopping-cart-calculator" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Item prices</span>
+<span class="n">banana_price</span> <span class="o">=</span> <span class="mf">0.49</span>
+<span class="n">apple_price</span> <span class="o">=</span> <span class="mf">0.89</span>
+<span class="n">orange_price</span> <span class="o">=</span> <span class="mf">0.59</span>
+
+<span class="c1"># Quantities</span>
+<span class="n">banana_qty</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many bananas? &quot;</span><span class="p">))</span>
+<span class="n">apple_qty</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many apples? &quot;</span><span class="p">))</span>
+<span class="n">orange_qty</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many oranges? &quot;</span><span class="p">))</span>
+
+<span class="c1"># Calculations</span>
+<span class="n">subtotal</span> <span class="o">=</span> <span class="p">(</span><span class="n">banana_price</span> <span class="o">*</span> <span class="n">banana_qty</span> <span class="o">+</span> 
+           <span class="n">apple_price</span> <span class="o">*</span> <span class="n">apple_qty</span> <span class="o">+</span> 
+           <span class="n">orange_price</span> <span class="o">*</span> <span class="n">orange_qty</span><span class="p">)</span>
+<span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.08</span>
+<span class="n">tax</span> <span class="o">=</span> <span class="n">subtotal</span> <span class="o">*</span> <span class="n">tax_rate</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">subtotal</span> <span class="o">+</span> <span class="n">tax</span>
+
+<span class="c1"># Receipt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Shopping Receipt ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bananas: $</span><span class="si">{</span><span class="n">banana_price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">banana_qty</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Apples: $</span><span class="si">{</span><span class="n">apple_price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">apple_qty</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oranges: $</span><span class="si">{</span><span class="n">orange_price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">orange_qty</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Subtotal: $</span><span class="si">{</span><span class="n">subtotal</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tax: $</span><span class="si">{</span><span class="n">tax</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total: $</span><span class="si">{</span><span class="n">total</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="common-mistakes-and-how-to-fix-them">
+<h3>Common Mistakes and How to Fix Them<a class="headerlink" href="#common-mistakes-and-how-to-fix-them" title="Link to this heading">#</a></h3>
+<section id="type-mismatch">
+<h4>1. Type Mismatch<a class="headerlink" href="#type-mismatch" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wrong</span>
+<span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;25&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">5</span>  <span class="c1"># Error! Can&#39;t add string and number</span>
+
+<span class="c1"># Correct</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;25&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">5</span>  <span class="c1"># Works! Now age is a number</span>
+</pre></div>
+</div>
+</section>
+<section id="variable-name-errors">
+<h4>2. Variable Name Errors<a class="headerlink" href="#variable-name-errors" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wrong</span>
+<span class="n">first</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>    <span class="c1"># Space not allowed</span>
+<span class="nb">print</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>        <span class="c1"># Don&#39;t use Python keywords</span>
+
+<span class="c1"># Correct</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="case-sensitivity">
+<h4>3. Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wrong</span>
+<span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Error! &#39;name&#39; is not defined</span>
+
+<span class="c1"># Correct</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Works!</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="practice-exercises">
+<h3>Practice Exercises<a class="headerlink" href="#practice-exercises" title="Link to this heading">#</a></h3>
+<section id="basic-exercises">
+<h4>Basic Exercises<a class="headerlink" href="#basic-exercises" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Create variables for your name, age, and favorite color</p></li>
+<li><p>Calculate your age in months</p></li>
+<li><p>Create a program that converts kilometers to miles</p></li>
+<li><p>Make a temperature converter (Celsius to Fahrenheit)</p></li>
+</ol>
+</section>
+<section id="intermediate-exercises">
+<h4>Intermediate Exercises<a class="headerlink" href="#intermediate-exercises" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Create a BMI calculator</p></li>
+<li><p>Build a simple interest calculator</p></li>
+<li><p>Make a grade calculator</p></li>
+<li><p>Create a time converter (seconds to hours/minutes/seconds)</p></li>
+</ol>
+</section>
+<section id="advanced-exercises">
+<h4>Advanced Exercises<a class="headerlink" href="#advanced-exercises" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Create a currency converter with multiple currencies</p></li>
+<li><p>Build a pizza order calculator with toppings</p></li>
+<li><p>Make a workout tracker that calculates calories burned</p></li>
+<li><p>Create a monthly budget calculator</p></li>
+</ol>
+</section>
+</section>
+<section id="looking-ahead">
+<h3>Looking Ahead<a class="headerlink" href="#looking-ahead" title="Link to this heading">#</a></h3>
+<p>Next chapter, we’ll learn about:</p>
+<ul class="simple">
+<li><p>Making decisions with if statements</p></li>
+<li><p>Comparing values</p></li>
+<li><p>Creating conditions</p></li>
+<li><p>Building more complex programs</p></li>
+</ul>
+</section>
+<section id="quick-reference">
+<h3>Quick Reference<a class="headerlink" href="#quick-reference" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variable Creation</span>
+<span class="n">variable_name</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="c1"># Data Types</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">42</span>          <span class="c1"># Integer</span>
+<span class="n">decimal</span> <span class="o">=</span> <span class="mf">3.14</span>       <span class="c1"># Float</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>       <span class="c1"># String</span>
+<span class="n">is_true</span> <span class="o">=</span> <span class="kc">True</span>       <span class="c1"># Boolean</span>
+<span class="n">empty</span> <span class="o">=</span> <span class="kc">None</span>         <span class="c1"># None</span>
+
+<span class="c1"># Type Conversion</span>
+<span class="nb">str</span><span class="p">()</span>    <span class="c1"># Convert to string</span>
+<span class="nb">int</span><span class="p">()</span>    <span class="c1"># Convert to integer</span>
+<span class="nb">float</span><span class="p">()</span>  <span class="c1"># Convert to decimal</span>
+<span class="nb">bool</span><span class="p">()</span>   <span class="c1"># Convert to boolean</span>
+
+<span class="c1"># String Operations</span>
+<span class="nb">len</span><span class="p">()</span>    <span class="c1"># Get length</span>
+<span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># Convert to uppercase</span>
+<span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c1"># Convert to lowercase</span>
+<span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="c1"># Remove whitespace</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 1: First Steps into Programming with Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 3: Control Flow - Your Programming Navigation System</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-programs-remember-things">Making Your Programs Remember Things</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-what-are-variables">Introduction: What Are Variables?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-box-analogy">The Box Analogy</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-variables">Creating Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-rules-for-variable-names">Basic Rules for Variable Names</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-in-python">Data Types in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">1. Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-whole-numbers">Integers (Whole Numbers)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers-decimals">Floating-Point Numbers (Decimals)</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#number-systems">Number Systems</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-text">2. Strings (Text)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-strings">Creating Strings</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String Methods</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">String Formatting</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-true-false">3. Booleans (True/False)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#none-nothing">4. None (Nothing)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-types">Converting Between Types</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-examples">Practical Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-calculator">1. Simple Calculator</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#personal-information-manager">2. Personal Information Manager</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shopping-cart-calculator">3. Shopping Cart Calculator</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes-and-how-to-fix-them">Common Mistakes and How to Fix Them</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#type-mismatch">1. Type Mismatch</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-name-errors">2. Variable Name Errors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-sensitivity">3. Case Sensitivity</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises">Practice Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-exercises">Basic Exercises</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-exercises">Intermediate Exercises</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-exercises">Advanced Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-ahead">Looking Ahead</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Ansa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

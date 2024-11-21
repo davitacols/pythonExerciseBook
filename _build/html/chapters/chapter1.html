@@ -1,0 +1,1196 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 1: First Steps into Programming with Python &#8212; Python Exercise Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter1';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 2: Variables and Data Types" href="chapter2.html" />
+    <link rel="prev" title="Notebooks with MyST Markdown" href="../markdown-notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Python Exercise Book - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python Exercise Book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to “Learn Python Programming”
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Guide for Python Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 1: First Steps into Programming with Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Variables and Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Control Flow - Your Programming Navigation System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Functions - The Building Blocks of Modular Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Data Structures - A Comprehensive Exploration of Information Organization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: File Operations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/chapter1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 1: First Steps into Programming with Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 1: First Steps into Programming with Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome-to-programming">Welcome to Programming!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-story-of-python-a-revolution-in-programming">The Story of Python: A Revolution in Programming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-a-holiday-project-changed-computing-forever">How a Holiday Project Changed Computing Forever</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-christmas-tale">A Christmas Tale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-philosophy">Python’s Philosophy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zen-of-python">The Zen of Python</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-through-the-years">Python Through the Years</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-1-0-1994">Python 1.0 (1994)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-2-0-2000">Python 2.0 (2000)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-3-0-2008">Python 3.0 (2008)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modern-python-2015-present">Modern Python (2015-Present)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-impact-on-the-world">Python’s Impact on the World</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#education">Education</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing">Scientific Computing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-development">Web Development</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence">Artificial Intelligence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-facts-about-python">Fun Facts About Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#did-you-know">Did You Know?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-community">Python’s Community</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-global-family">A Global Family</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-motto-batteries-included">Python’s Motto: “Batteries Included”</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-future-of-python">The Future of Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-python-is-heading">Where Python is Heading</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python-matters-today">Why Python Matters Today</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-role-in-modern-technology">Python’s Role in Modern Technology</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-success-stories">Python Success Stories</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-examples">Real-World Examples</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-why-learn-python-now">Conclusion: Why Learn Python Now?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-how-computers-think">Understanding How Computers Think</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-computer-s-mind">The Computer’s Mind</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-python-aka-getting-ready-to-code">Setting Up Python (AKA Getting Ready to Code)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-coding-workshop-ide">Your Coding Workshop (IDE)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-python-programs">Your First Python Programs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">Hello, World!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-python-calculate">Making Python Calculate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-and-exercises">Practice and Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-personal-information-card">Project: Personal Information Card</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-errors-and-solutions">Common Errors and Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors">Syntax Errors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-quiz">Chapter Quiz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-first-steps-into-programming-with-python">
+<h1>Chapter 1: First Steps into Programming with Python<a class="headerlink" href="#chapter-1-first-steps-into-programming-with-python" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>A Beginner’s Journey into the World of Code</p>
+</div></blockquote>
+<div class="note admonition">
+<p class="admonition-title">Chapter Overview</p>
+<p>In this chapter, you’ll learn:</p>
+<ul class="simple">
+<li><p>What programming is and why Python is a great first language</p></li>
+<li><p>How to set up your Python programming environment</p></li>
+<li><p>How to write and run your first Python programs</p></li>
+<li><p>Basic programming concepts through hands-on examples</p></li>
+</ul>
+</div>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>By the end of this chapter, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Understand what programming is and why Python is widely used</p></li>
+<li><p>Install Python and set up a development environment</p></li>
+<li><p>Write and run basic Python programs</p></li>
+<li><p>Use fundamental programming concepts like print statements and basic math</p></li>
+<li><p>Handle common programming errors</p></li>
+<li><p>Create interactive programs that accept user input</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="welcome-to-programming">
+<h1>Welcome to Programming!<a class="headerlink" href="#welcome-to-programming" title="Link to this heading">#</a></h1>
+<section id="the-story-of-python-a-revolution-in-programming">
+<h2>The Story of Python: A Revolution in Programming<a class="headerlink" href="#the-story-of-python-a-revolution-in-programming" title="Link to this heading">#</a></h2>
+</section>
+<section id="how-a-holiday-project-changed-computing-forever">
+<h2>How a Holiday Project Changed Computing Forever<a class="headerlink" href="#how-a-holiday-project-changed-computing-forever" title="Link to this heading">#</a></h2>
+<section id="a-christmas-tale">
+<h3>A Christmas Tale<a class="headerlink" href="#a-christmas-tale" title="Link to this heading">#</a></h3>
+<p>Picture this: It’s December 1989, and in the Netherlands, a computer programmer named Guido van Rossum is looking for a hobby project to keep himself busy during the Christmas holidays. Unlike most people who might build a snowman or bake cookies, Guido decided to create something that would eventually change the world of computing forever: the Python programming language.</p>
+<p>But why “Python”? No, it wasn’t named after the snake! Guido was a big fan of a British comedy show called “Monty Python’s Flying Circus.” He wanted a name that was short, unique, and a bit mysterious. By naming it after this quirky comedy show, Guido set the tone for what Python would become – powerful yet fun to use.</p>
+</section>
+<section id="python-s-philosophy">
+<h3>Python’s Philosophy<a class="headerlink" href="#python-s-philosophy" title="Link to this heading">#</a></h3>
+<section id="the-zen-of-python">
+<h4>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Link to this heading">#</a></h4>
+<p>One of Python’s most famous features is its set of guiding principles, known as “The Zen of Python.” You can see these principles by typing <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code> in Python. Here are some key ideas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The Zen of Python (abbreviated)</span>
+<span class="o">-</span> <span class="n">Beautiful</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">ugly</span>
+<span class="o">-</span> <span class="n">Simple</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="nb">complex</span>
+<span class="o">-</span> <span class="n">Readability</span> <span class="n">counts</span>
+<span class="o">-</span> <span class="n">There</span> <span class="n">should</span> <span class="n">be</span> <span class="n">one</span><span class="o">--</span> <span class="ow">and</span> <span class="n">preferably</span> <span class="n">only</span> <span class="n">one</span> <span class="o">--</span><span class="n">obvious</span> <span class="n">way</span> <span class="n">to</span> <span class="n">do</span> <span class="n">it</span>
+</pre></div>
+</div>
+<p>These aren’t just fancy words – they’re principles that make Python uniquely beginner-friendly while remaining powerful enough for experts.</p>
+</section>
+</section>
+<section id="python-through-the-years">
+<h3>Python Through the Years<a class="headerlink" href="#python-through-the-years" title="Link to this heading">#</a></h3>
+<section id="python-1-0-1994">
+<h4>Python 1.0 (1994)<a class="headerlink" href="#python-1-0-1994" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The first official release</p></li>
+<li><p>Included basic features like functions, classes, and modules</p></li>
+<li><p>Already had some of Python’s most famous features like list comprehensions</p></li>
+</ul>
+</section>
+<section id="python-2-0-2000">
+<h4>Python 2.0 (2000)<a class="headerlink" href="#python-2-0-2000" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Introduced garbage collection (automatic memory management)</p></li>
+<li><p>Added list comprehensions</p></li>
+<li><p>Unicode support</p></li>
+<li><p>Started gaining popularity in scientific computing</p></li>
+</ul>
+</section>
+<section id="python-3-0-2008">
+<h4>Python 3.0 (2008)<a class="headerlink" href="#python-3-0-2008" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>A major overhaul that broke compatibility with Python 2</p></li>
+<li><p>Made strings Unicode by default</p></li>
+<li><p>Improved integer division</p></li>
+<li><p>Cleaned up many inconsistencies</p></li>
+<li><p>More intuitive and consistent syntax</p></li>
+</ul>
+</section>
+<section id="modern-python-2015-present">
+<h4>Modern Python (2015-Present)<a class="headerlink" href="#modern-python-2015-present" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Added async/await for better handling of concurrent operations</p></li>
+<li><p>Type hints for better code documentation</p></li>
+<li><p>f-strings for easier string formatting</p></li>
+<li><p>Enhanced performance and security features</p></li>
+</ul>
+</section>
+</section>
+<section id="python-s-impact-on-the-world">
+<h3>Python’s Impact on the World<a class="headerlink" href="#python-s-impact-on-the-world" title="Link to this heading">#</a></h3>
+<section id="education">
+<h4>Education<a class="headerlink" href="#education" title="Link to this heading">#</a></h4>
+<p>Python has become the most popular language for teaching programming because:</p>
+<ul class="simple">
+<li><p>It reads almost like English</p></li>
+<li><p>Forces clean, organized code through indentation</p></li>
+<li><p>Has immediate visual feedback</p></li>
+<li><p>Supports both simple and complex programming concepts</p></li>
+</ul>
+</section>
+<section id="scientific-computing">
+<h4>Scientific Computing<a class="headerlink" href="#scientific-computing" title="Link to this heading">#</a></h4>
+<p>Scientists love Python because:</p>
+<ul class="simple">
+<li><p>NumPy provides powerful mathematical tools</p></li>
+<li><p>Pandas makes data analysis easier</p></li>
+<li><p>Matplotlib creates beautiful graphs</p></li>
+<li><p>Jupyter notebooks allow interactive research</p></li>
+</ul>
+</section>
+<section id="web-development">
+<h4>Web Development<a class="headerlink" href="#web-development" title="Link to this heading">#</a></h4>
+<p>Many websites you use daily are powered by Python:</p>
+<ul class="simple">
+<li><p>Instagram’s backend is written in Python</p></li>
+<li><p>YouTube was partially built with Python</p></li>
+<li><p>Reddit was rewritten in Python</p></li>
+<li><p>Dropbox heavily uses Python</p></li>
+</ul>
+</section>
+<section id="artificial-intelligence">
+<h4>Artificial Intelligence<a class="headerlink" href="#artificial-intelligence" title="Link to this heading">#</a></h4>
+<p>Python is the leader in AI development:</p>
+<ul class="simple">
+<li><p>TensorFlow and PyTorch (major AI libraries) use Python</p></li>
+<li><p>Most machine learning research is done in Python</p></li>
+<li><p>Data scientists prefer Python for its powerful libraries</p></li>
+<li><p>ChatGPT’s training involved Python code</p></li>
+</ul>
+</section>
+</section>
+<section id="fun-facts-about-python">
+<h3>Fun Facts About Python<a class="headerlink" href="#fun-facts-about-python" title="Link to this heading">#</a></h3>
+<section id="did-you-know">
+<h4>Did You Know?<a class="headerlink" href="#did-you-know" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Python at Google</strong>: Google’s original motto was “Python where we can, C++ where we must”</p></li>
+<li><p><strong>Python in Movies</strong>: Major films like Star Wars and Marvel movies use Python for:</p>
+<ul class="simple">
+<li><p>Special effects</p></li>
+<li><p>Animation rendering</p></li>
+<li><p>Production management</p></li>
+</ul>
+</li>
+<li><p><strong>Python in Games</strong>: Many popular games use Python for:</p>
+<ul class="simple">
+<li><p>Game logic</p></li>
+<li><p>Tool development</p></li>
+<li><p>Server management</p></li>
+<li><p>Modding support</p></li>
+</ul>
+</li>
+<li><p><strong>Python in Space</strong>: NASA uses Python for:</p>
+<ul class="simple">
+<li><p>Scientific calculations</p></li>
+<li><p>Data analysis</p></li>
+<li><p>Image processing from space missions</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="python-s-community">
+<h3>Python’s Community<a class="headerlink" href="#python-s-community" title="Link to this heading">#</a></h3>
+<section id="a-global-family">
+<h4>A Global Family<a class="headerlink" href="#a-global-family" title="Link to this heading">#</a></h4>
+<p>Python has one of the largest and most welcoming programming communities:</p>
+<ul class="simple">
+<li><p>Over 8.2 million developers worldwide</p></li>
+<li><p>Thousands of free tutorials and resources</p></li>
+<li><p>Active help forums and discussion groups</p></li>
+<li><p>Regular conferences and meetups</p></li>
+<li><p>PyPI (Python Package Index) has over 300,000 projects</p></li>
+</ul>
+</section>
+<section id="python-s-motto-batteries-included">
+<h4>Python’s Motto: “Batteries Included”<a class="headerlink" href="#python-s-motto-batteries-included" title="Link to this heading">#</a></h4>
+<p>Python comes with a rich standard library, meaning:</p>
+<ul class="simple">
+<li><p>Many common tasks have built-in solutions</p></li>
+<li><p>You can start building useful programs immediately</p></li>
+<li><p>Less dependency on external packages</p></li>
+<li><p>Consistent, well-documented tools</p></li>
+</ul>
+</section>
+</section>
+<section id="the-future-of-python">
+<h3>The Future of Python<a class="headerlink" href="#the-future-of-python" title="Link to this heading">#</a></h3>
+<section id="where-python-is-heading">
+<h4>Where Python is Heading<a class="headerlink" href="#where-python-is-heading" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Machine Learning and AI</strong></p>
+<ul class="simple">
+<li><p>Continued dominance in AI development</p></li>
+<li><p>New tools for machine learning</p></li>
+<li><p>Enhanced data processing capabilities</p></li>
+</ul>
+</li>
+<li><p><strong>Web Development</strong></p>
+<ul class="simple">
+<li><p>More async features for better performance</p></li>
+<li><p>Enhanced web frameworks</p></li>
+<li><p>Better integration with modern web technologies</p></li>
+</ul>
+</li>
+<li><p><strong>Education</strong></p>
+<ul class="simple">
+<li><p>Increased adoption in schools</p></li>
+<li><p>More educational tools and resources</p></li>
+<li><p>Enhanced interactive learning platforms</p></li>
+</ul>
+</li>
+<li><p><strong>Internet of Things (IoT)</strong></p>
+<ul class="simple">
+<li><p>Growing use in embedded systems</p></li>
+<li><p>Enhanced support for small devices</p></li>
+<li><p>Better integration with hardware</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="why-python-matters-today">
+<h3>Why Python Matters Today<a class="headerlink" href="#why-python-matters-today" title="Link to this heading">#</a></h3>
+<section id="python-s-role-in-modern-technology">
+<h4>Python’s Role in Modern Technology<a class="headerlink" href="#python-s-role-in-modern-technology" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Automation</strong></p>
+<ul class="simple">
+<li><p>Automating repetitive tasks</p></li>
+<li><p>System administration</p></li>
+<li><p>Testing and quality assurance</p></li>
+</ul>
+</li>
+<li><p><strong>Data Analysis</strong></p>
+<ul class="simple">
+<li><p>Business intelligence</p></li>
+<li><p>Scientific research</p></li>
+<li><p>Financial modeling</p></li>
+</ul>
+</li>
+<li><p><strong>Artificial Intelligence</strong></p>
+<ul class="simple">
+<li><p>Machine learning</p></li>
+<li><p>Natural language processing</p></li>
+<li><p>Computer vision</p></li>
+</ul>
+</li>
+<li><p><strong>Web Applications</strong></p>
+<ul class="simple">
+<li><p>Backend services</p></li>
+<li><p>APIs</p></li>
+<li><p>Content management systems</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="python-success-stories">
+<h3>Python Success Stories<a class="headerlink" href="#python-success-stories" title="Link to this heading">#</a></h3>
+<section id="real-world-examples">
+<h4>Real-World Examples<a class="headerlink" href="#real-world-examples" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Instagram</strong></p>
+<ul class="simple">
+<li><p>Handles millions of users</p></li>
+<li><p>Processes billions of photos</p></li>
+<li><p>Scales efficiently</p></li>
+</ul>
+</li>
+<li><p><strong>Spotify</strong></p>
+<ul class="simple">
+<li><p>Data analysis</p></li>
+<li><p>Music recommendations</p></li>
+<li><p>Backend services</p></li>
+</ul>
+</li>
+<li><p><strong>Netflix</strong></p>
+<ul class="simple">
+<li><p>Content delivery</p></li>
+<li><p>Recommendation system</p></li>
+<li><p>Data analytics</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="conclusion-why-learn-python-now">
+<h3>Conclusion: Why Learn Python Now?<a class="headerlink" href="#conclusion-why-learn-python-now" title="Link to this heading">#</a></h3>
+<p>Python isn’t just a programming language; it’s a gateway to the future of technology. Whether you want to:</p>
+<ul class="simple">
+<li><p>Create the next big app</p></li>
+<li><p>Analyze data for business decisions</p></li>
+<li><p>Build AI models</p></li>
+<li><p>Automate your daily tasks</p></li>
+<li><p>Or simply understand how modern technology works</p></li>
+</ul>
+<p>Python gives you the tools to achieve these goals. Its journey from a Christmas hobby project to a global programming phenomenon shows that sometimes the best things start with simple ideas and grow through community, collaboration, and a commitment to making programming accessible to everyone.</p>
+<p>Remember: When you learn Python, you’re not just learning a programming language – you’re joining a worldwide community of creators, innovators, and problem-solvers who are shaping the future of technology.</p>
+</section>
+<section id="why-python">
+<h3>Why Python?<a class="headerlink" href="#why-python" title="Link to this heading">#</a></h3>
+<p>Python was created in 1991 by Guido van Rossum, who named it after Monty Python’s Flying Circus. His goals were to make a language that was:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Easy to read</p></td>
+<td><p>Almost like reading English</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fun to use</p></td>
+<td><p>Programming should be enjoyable!</p></td>
+</tr>
+<tr class="row-even"><td><p>Powerful</p></td>
+<td><p>Capable of serious applications</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="sidebar">
+<p class="sidebar-title">Who Uses Python?</p>
+<ul class="simple">
+<li><p>NASA: Scientific calculations</p></li>
+<li><p>Instagram: Website backend</p></li>
+<li><p>Google: Artificial intelligence</p></li>
+<li><p>Disney: Movie animation</p></li>
+</ul>
+</aside>
+</section>
+</section>
+<section id="understanding-how-computers-think">
+<h2>Understanding How Computers Think<a class="headerlink" href="#understanding-how-computers-think" title="Link to this heading">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Computers are like extremely literal beings from another planet - they need precise instructions for everything!</p>
+</div>
+<section id="the-computer-s-mind">
+<h3>The Computer’s Mind<a class="headerlink" href="#the-computer-s-mind" title="Link to this heading">#</a></h3>
+<p>Computers think differently from humans. They:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<ul>
+<li>Take everything literally</li>
+<li>Don't understand context</li>
+<li>Need detailed instructions</li>
+<li>Never get tired</li>
+<li>Calculate incredibly fast</li>
+</ul>
+</div></div>
+</div>
+</section>
+</section>
+<section id="setting-up-python-aka-getting-ready-to-code">
+<h2>Setting Up Python (AKA Getting Ready to Code)<a class="headerlink" href="#setting-up-python-aka-getting-ready-to-code" title="Link to this heading">#</a></h2>
+<p>Before we can start having fun with Python, we need to install it on your computer. It’s like installing a new app, but this app lets you create other apps!
+How to Install Python:</p>
+<p>Go to <a class="reference external" href="http://python.org">python.org</a> (it’s like the App Store for Python)
+Click “Downloads”
+Choose the version for your computer (don’t worry about which version - just pick the latest one)
+Run the installer you downloaded
+Important: When installing, make sure to check the box that says “Add Python to PATH” (we’ll explain why later!)</p>
+<section id="your-coding-workshop-ide">
+<h3>Your Coding Workshop (IDE)<a class="headerlink" href="#your-coding-workshop-ide" title="Link to this heading">#</a></h3>
+<p>Just like you need a kitchen to cook, you need a place to write code. We call this place an IDE (Interactive Development Environment). Let’s use something simple called IDLE - it comes free with Python!
+To open IDLE:</p>
+<ul class="simple">
+<li><p>Windows: Find “IDLE” in your Start menu</p></li>
+<li><p>Mac: Find “IDLE” in your Applications folder</p></li>
+<li><p>Linux: Type “idle” in your terminal</p></li>
+</ul>
+</section>
+</section>
+<section id="your-first-python-programs">
+<h2>Your First Python Programs<a class="headerlink" href="#your-first-python-programs" title="Link to this heading">#</a></h2>
+<section id="hello-world">
+<h3>Hello, World!<a class="headerlink" href="#hello-world" title="Link to this heading">#</a></h3>
+<p>Let’s write our first program:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s break down the components:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">print</span></code></p></td>
+<td><p>A function that displays output</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">()</span></code></p></td>
+<td><p>Parentheses to call the function</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code></p></td>
+<td><p>The text to display</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="making-python-calculate">
+<h3>Making Python Calculate<a class="headerlink" href="#making-python-calculate" title="Link to this heading">#</a></h3>
+<p>Python can act as a powerful calculator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic math operations</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Addition:&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Subtraction:&quot;</span><span class="p">,</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplication:&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division:&quot;</span><span class="p">,</span> <span class="mi">15</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Addition: 8
+Subtraction: 6
+Multiplication: 12
+Division: 5.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practice-and-exercises">
+<h2>Practice and Exercises<a class="headerlink" href="#practice-and-exercises" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Try It Yourself!</p>
+<p>Work through these exercises to reinforce your learning:</p>
+<ol class="arabic simple">
+<li><p>Print your name 5 times</p></li>
+<li><p>Calculate your age in days</p></li>
+<li><p>Convert miles to kilometers</p></li>
+<li><p>Calculate the area of a circle</p></li>
+</ol>
+</div>
+<section id="project-personal-information-card">
+<h3>Project: Personal Information Card<a class="headerlink" href="#project-personal-information-card" title="Link to this heading">#</a></h3>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a program that makes a personal info card</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>  <span class="c1"># Replace with input() in interactive mode</span>
+<span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;25&quot;</span>      <span class="c1"># Replace with input() in interactive mode</span>
+<span class="n">hobby</span> <span class="o">=</span> <span class="s2">&quot;coding&quot;</span>
+<span class="n">food</span> <span class="o">=</span> <span class="s2">&quot;pizza&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Personal Info Card ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name:&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Age:&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hobby:&quot;</span><span class="p">,</span> <span class="n">hobby</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Favorite Food:&quot;</span><span class="p">,</span> <span class="n">food</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=====================&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="common-errors-and-solutions">
+<h2>Common Errors and Solutions<a class="headerlink" href="#common-errors-and-solutions" title="Link to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pay attention to these common errors to avoid frustration!</p>
+</div>
+<section id="syntax-errors">
+<h3>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wrong ❌</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello)      # Missing closing quote</span>
+
+<span class="c1"># Correct ✅</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="chapter-quiz">
+<h2>Chapter Quiz<a class="headerlink" href="#chapter-quiz" title="Link to this heading">#</a></h2>
+<p>Test your understanding:</p>
+<div class="note admonition">
+<p class="admonition-title">Questions</p>
+<ol class="arabic simple">
+<li><p>What command do we use to display output?</p></li>
+<li><p>How do we get input from a user?</p></li>
+<li><p>What happens if we try to add a number and a string?</p></li>
+<li><p>How do we convert a string to a number?</p></li>
+<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">print(2</span> <span class="pre">+</span> <span class="pre">2)</span></code> and <code class="docutils literal notranslate"><span class="pre">print(&quot;2</span> <span class="pre">+</span> <span class="pre">2&quot;)</span></code>?</p></li>
+</ol>
+</div>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://python.org">Python’s Official Website</a></p></li>
+<li><p><a class="reference external" href="https://pythonchallenge.com">Python Challenge</a></p></li>
+<li><p><a class="reference external" href="https://repl.it">Interactive Python Tutorial</a></p></li>
+</ul>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Key Takeaways</p>
+<p>In this chapter, you learned:</p>
+<ul class="simple">
+<li><p>What programming is and why Python is popular</p></li>
+<li><p>How to set up your programming environment</p></li>
+<li><p>How to write basic Python programs</p></li>
+<li><p>How to handle common programming errors</p></li>
+<li><p>How to create interactive programs</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Next chapter, we’ll explore variables in depth - how to create them, use them, and manipulate them to create more complex programs!</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../markdown-notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 2: Variables and Data Types</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 1: First Steps into Programming with Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome-to-programming">Welcome to Programming!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-story-of-python-a-revolution-in-programming">The Story of Python: A Revolution in Programming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-a-holiday-project-changed-computing-forever">How a Holiday Project Changed Computing Forever</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-christmas-tale">A Christmas Tale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-philosophy">Python’s Philosophy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zen-of-python">The Zen of Python</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-through-the-years">Python Through the Years</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-1-0-1994">Python 1.0 (1994)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-2-0-2000">Python 2.0 (2000)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-3-0-2008">Python 3.0 (2008)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modern-python-2015-present">Modern Python (2015-Present)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-impact-on-the-world">Python’s Impact on the World</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#education">Education</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing">Scientific Computing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-development">Web Development</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence">Artificial Intelligence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-facts-about-python">Fun Facts About Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#did-you-know">Did You Know?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-community">Python’s Community</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-global-family">A Global Family</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-motto-batteries-included">Python’s Motto: “Batteries Included”</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-future-of-python">The Future of Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-python-is-heading">Where Python is Heading</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python-matters-today">Why Python Matters Today</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-role-in-modern-technology">Python’s Role in Modern Technology</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-success-stories">Python Success Stories</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-examples">Real-World Examples</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-why-learn-python-now">Conclusion: Why Learn Python Now?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-how-computers-think">Understanding How Computers Think</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-computer-s-mind">The Computer’s Mind</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-python-aka-getting-ready-to-code">Setting Up Python (AKA Getting Ready to Code)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-coding-workshop-ide">Your Coding Workshop (IDE)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-python-programs">Your First Python Programs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">Hello, World!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-python-calculate">Making Python Calculate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-and-exercises">Practice and Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-personal-information-card">Project: Personal Information Card</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-errors-and-solutions">Common Errors and Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-errors">Syntax Errors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-quiz">Chapter Quiz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Ansa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
