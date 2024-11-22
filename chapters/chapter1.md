@@ -245,12 +245,6 @@ Python was created in 1991 by Guido van Rossum, who named it after Monty Python'
   - Capable of serious applications
 ```
 
-```{sidebar} Who Uses Python?
-- NASA: Scientific calculations
-- Instagram: Website backend
-- Google: Artificial intelligence
-- Disney: Movie animation
-```
 
 ## Understanding How Computers Think
 
